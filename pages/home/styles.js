@@ -24,7 +24,7 @@ export const SecondaryButton = styled.TouchableOpacity`
   align-items: center;
 `;
 
-export const Header = styled.View`
+export const HeaderDetails = styled.View`
   flex-wrap: wrap;
   padding: 0px 32px;
 `;
@@ -122,7 +122,7 @@ export const BookCard = styled.View`
 export const BookImage = styled.Image`
   width: 100%;
   /* border-radius: 10px; */
-  height: 124px;
+  height: 122px;
 `;
 
 export const BookModalImage = styled.Image`
