@@ -1,6 +1,8 @@
-import React from "react";
-import { View, StatusBar } from "react-native";
+import React, { useState } from "react";
+import { View, StatusBar, TouchableOpacity } from "react-native";
+import BookModal from "./components/BookModal";
 import { getStatusBarHeight } from "react-native-status-bar-height";
+import { Feather } from "@expo/vector-icons";
 
 import {
   Container,
@@ -21,12 +23,39 @@ import {
   BookTitle,
   BookAuthor,
   BookDetailsButton,
-  ButtonText
+  ButtonText,
 } from "./styles";
 
-import { Feather } from "@expo/vector-icons";
-
 const Home = () => {
+  const [isBookModalVisible, setIsBookModalVisible] = useState(false);
+
+  const books = [
+    {
+      id: 1,
+      title: "A elite do atraso",
+      photo: "a_elite_do_atraso.png",
+      author: "Jessé Souza",
+    },
+    {
+      id: 2,
+      title: "A elite do atraso",
+      photo: "a_elite_do_atraso.png",
+      author: "Jessé Souza",
+    },
+    {
+      id: 3,
+      title: "A elite do atraso",
+      photo: "a_elite_do_atraso.png",
+      author: "Jessé Souza",
+    },
+    {
+      id: 4,
+      title: "A elite do atraso",
+      photo: "a_elite_do_atraso.png",
+      author: "Jessé Souza",
+    },
+  ];
+
   return (
     <Container>
       <StatusBar barStyle="light-content" />
@@ -49,50 +78,35 @@ const Home = () => {
         </Banner>
         <Banner>
           <BannerImage source={require("../../assets/book-lover-bro.png")} />
-          <BannerTitle>Se não puder, receba</BannerTitle>
+          <BannerTitle>Se precisar receba</BannerTitle>
         </Banner>
       </BannersContainer>
       <SearchContainer>
-        <Feather name="search" size={16} color="#282828" />
+        <Feather name="search" size={16} color="#A9A9A9" />
         <SearchInput placeholder="Pesquisar" />
       </SearchContainer>
       <BooksContainer>
-        <BookCard>
-          <BookImage source={require("../../assets/a_elite_do_atraso.png")} />
-          <BookTitle>Cem anos de solidão</BookTitle>
-          <BookAuthor>Wesley Lopes</BookAuthor>
-        </BookCard>
-        <BookCard>
-          <BookImage source={require("../../assets/a_elite_do_atraso.png")} />
-          <BookTitle>Cem anos de solidão</BookTitle>
-          <BookAuthor>Wesley Lopes</BookAuthor>
-        </BookCard>
-        <BookCard>
-          <BookImage source={require("../../assets/a_elite_do_atraso.png")} />
-          <BookTitle>Cem anos de solidão</BookTitle>
-          <BookAuthor>Wesley Lopes</BookAuthor>
-        </BookCard>
-        <BookCard>
-          <BookImage source={require("../../assets/a_elite_do_atraso.png")} />
-          <BookTitle>Cem anos de solidão</BookTitle>
-          <BookAuthor>Wesley Lopes</BookAuthor>
-        </BookCard>
-        <BookCard>
-          <BookImage source={require("../../assets/a_elite_do_atraso.png")} />
-          <BookTitle>Cem anos de solidão</BookTitle>
-          <BookAuthor>Wesley Lopes</BookAuthor>
-        </BookCard>
-        <BookCard>
-          <BookImage source={require("../../assets/a_elite_do_atraso.png")} />
-          <BookTitle>Cem anos de solidão</BookTitle>
-          <BookAuthor>Wesley Lopes</BookAuthor>
-        </BookCard>
-        <BookCard>
-          <BookImage source={require("../../assets/a_elite_do_atraso.png")} />
-          <BookTitle>Cem anos de solidão</BookTitle>
-          <BookAuthor>Wesley Lopes</BookAuthor>
-        </BookCard>
+        {books.map((book) => (
+          <TouchableOpacity
+            onPress={() => {
+              setIsBookModalVisible(true);
+            }}
+          >
+            <BookCard key={book.id}>
+              <BookImage
+                source={require("../../assets/a_elite_do_atraso.png")}
+              />
+              <BookTitle>{book.title}</BookTitle>
+              <BookAuthor>{book.author}</BookAuthor>
+            </BookCard>
+          </TouchableOpacity>
+        ))}
       </BooksContainer>
+
+      <BookModal
+        isVisible={isBookModalVisible}
+        hideModal={() => setIsBookModalVisible(false)}
+      />
     </Container>
   );
 };

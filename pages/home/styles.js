@@ -1,13 +1,27 @@
 import styled from "styled-components/native";
 
-const primaryBgColor = "#282828";
-const primaryColor = "#F1F1F1";
-const secondaryColor = "#A9A9A9";
+const primaryColor = "#4285f4" // azul
+const darkColor = "#282828"
+const lightColor = "#F2F2F2"
+const grayColor = "#A9A9A9";
 
 export const Container = styled.ScrollView`
   flex: 1;
-  background-color: ${primaryBgColor};
+  background-color: ${darkColor};
   padding-top: 32px;
+`;
+
+export const MainButton = styled.TouchableOpacity`
+  background-color: ${primaryColor};
+  padding: 18px 24px;
+  border-radius: 10px;
+  align-items: center;
+`;
+export const SecondaryButton = styled.TouchableOpacity`
+  background-color: rgba(0,0,0,0.3);
+  padding: 18px 24px;
+  border-radius: 10px;
+  align-items: center;
 `;
 
 export const Header = styled.View`
@@ -17,24 +31,29 @@ export const Header = styled.View`
 
 export const TitleText = styled.Text`
   font-size: 18px;
-  color: ${primaryColor};
+  color: ${lightColor};
   margin-bottom: 10px;
+`;
+export const TitleBold = styled.Text`
+  font-size: 18px;
+  color: ${lightColor};
+  font-weight: bold;
 `;
 
 export const FontBold = styled.Text`
   font-size: 14px;
-  color: ${primaryColor};
+  color: ${lightColor};
   font-weight: bold;
 `;
 
 export const SmallGrayText = styled.Text`
   font-size: 12px;
-  color: ${secondaryColor};
+  color: ${grayColor};
 `;
 
 export const NormalText = styled.Text`
   font-size: 14px;
-  color: ${primaryColor};
+  color: ${lightColor};
 `;
 
 export const BannersContainer = styled.ScrollView.attrs({
@@ -46,26 +65,27 @@ export const BannersContainer = styled.ScrollView.attrs({
 `;
 
 export const Banner = styled.View`
-  background-color: #ffe4e1;
+  background-color: rgba(0,0,0,0.3);
   width: 312px;
   height: 148px;
   margin-left: 16px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 40px 30px 10px;
+  padding: 10px 20px;
   border-radius: 10px;
 `;
 
 export const BannerImage = styled.Image`
-  height: 142px;
   width: 124px;
+  height: 122px;
   flex: 1;
+  /* margin-right: 20px; */
 `;
 
 export const BannerTitle = styled.Text`
   font-size: 18px;
-  color: #282828;
+  color: ${lightColor};
   flex: 1;
   text-align: center;
   font-weight: bold;
@@ -74,7 +94,7 @@ export const BannerTitle = styled.Text`
 
 export const SearchContainer = styled.View`
   margin: 32px 32px 0px;
-  background-color: #ededed;
+  background-color: ${lightColor};
   padding: 14px;
   border-radius: 10px;
   flex-direction: row;
@@ -84,6 +104,7 @@ export const SearchContainer = styled.View`
 export const SearchInput = styled.TextInput`
   margin-left: 10px;
   width: 100%;
+  color: ${grayColor};
 `;
 export const BooksContainer = styled.View`
   padding: 0 32px;
@@ -93,25 +114,31 @@ export const BooksContainer = styled.View`
   justify-content: space-between;
 `;
 export const BookCard = styled.View`
-  border-radius: 10px;
+  /* border-radius: 10px; */
   width: 84px;
   margin-bottom: 32px;
 `;
 
 export const BookImage = styled.Image`
   width: 100%;
-  border-radius: 10px;
-  height: 100px;
+  /* border-radius: 10px; */
+  height: 124px;
+`;
+
+export const BookModalImage = styled.Image`
+  width: 102px;
+  /* border-radius: 10px; */
+  height: 148px;
 `;
 
 export const BookTitle = styled.Text`
   font-size: 12px;
-  color: ${primaryColor};
+  color: ${lightColor};
   margin: 6px 0;
 `;
 export const BookAuthor = styled.Text`
   font-size: 10px;
-  color: ${secondaryColor};
+  color: ${grayColor};
 `;
 
 export const BookDetailsButton = styled.TouchableOpacity`
@@ -124,5 +151,5 @@ export const BookDetailsButton = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
   font-size: 10px;
   text-align: center;
-  color: ${primaryBgColor};
+  color: ${darkColor};
 `;
