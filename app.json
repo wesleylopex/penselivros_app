@@ -1,11 +1,10 @@
 {
   "expo": {
-    "name": "penselivros_app",
+    "name": "Pense Livros",
     "slug": "penselivros_app",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,7 +12,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#4285F4"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,7 +21,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.pensehumanas.penselivros"
+    },
+    "android": {
+      "package": "com.pensehumanas.penselivros"
     }
   }
 }

@@ -13,7 +13,7 @@ const Header = () => {
       </View>
       <View>
         <SmallGrayText>
-          Último livro recebido: Trabalho urbano e conflito social
+          Último livro recebido: A elite do atraso
         </SmallGrayText>
       </View>
     </HeaderDetails>
