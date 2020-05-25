@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, View, StyleSheet } from "react-native";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+const Tab = createMaterialTopTabNavigator();
 
 import {
   BooksContainer,
@@ -41,24 +45,51 @@ const BooksList = () => {
     },
   ];
 
+  const Books = () => {
+    return (
+      <View style={styles.bookListContainer}>
+        {books.map((book) => (
+          <TouchableOpacity
+            key={book.id}
+            style={{ width: 84 }}
+            onPress={() => setIsBookModalVisible(true)}
+          >
+            <BookCard>
+              <BookImage
+                source={require("../../../assets/a_elite_do_atraso.png")}
+              />
+              <BookTitle>{book.title}</BookTitle>
+              <BookAuthor>{book.author}</BookAuthor>
+            </BookCard>
+          </TouchableOpacity>
+        ))}
+      </View>
+    );
+  };
+
   return (
     <BooksContainer>
-      {books.map((book) => (
-        <TouchableOpacity
-          key={book.id}
-          onPress={() => {
-            setIsBookModalVisible(true);
-          }}
-        >
-          <BookCard>
-            <BookImage
-              source={require("../../../assets/a_elite_do_atraso.png")}
-            />
-            <BookTitle>{book.title}</BookTitle>
-            <BookAuthor>{book.author}</BookAuthor>
-          </BookCard>
-        </TouchableOpacity>
-      ))}
+      <Tab.Navigator
+        tabBarOptions={{
+          style: {
+            elevation: 0,
+            backgroundColor: "transparent",
+          },
+          labelStyle: {
+            textTransform: "capitalize",
+          },
+          activeTintColor: "#4285f4",
+          inactiveTintColor: "#A9A9A9",
+          indicatorStyle: {
+            backgroundColor: "#4285f4",
+          },
+        }}
+        sceneContainerStyle={{ backgroundColor: "#282828" }}
+      >
+        <Tab.Screen name="Política" component={Books} />
+        <Tab.Screen name="Sociologia" component={Books} />
+        <Tab.Screen name="História" component={Books} />
+      </Tab.Navigator>
 
       <BookModal
         isVisible={isBookModalVisible}
@@ -67,5 +98,15 @@ const BooksList = () => {
     </BooksContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  bookListContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#282828",
+    flexWrap: "wrap",
+    paddingTop: 32,
+  },
+});
 
 export default BooksList;
