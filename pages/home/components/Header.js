@@ -1,21 +1,17 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Image } from "react-native";
 
-import { HeaderDetails, TitleText, FontBold, SmallGrayText } from "../styles";
+import { HeaderDetails, HeaderContainer, ProfileImage } from "../styles";
+import { TitleText } from "../../../global/styles/styles";
+import profileImage from "../../../assets/me.jpg";
 
 const Header = () => {
   return (
     <HeaderDetails>
-      <View>
-        <TitleText>
-          Olá, <FontBold>Wesley</FontBold>
-        </TitleText>
-      </View>
-      <View>
-        <SmallGrayText>
-          Último livro recebido: A elite do atraso
-        </SmallGrayText>
-      </View>
+      <HeaderContainer>
+        <ProfileImage source={profileImage} />
+        <TitleText>Olá, Wesley Lopes</TitleText>
+      </HeaderContainer>
     </HeaderDetails>
   );
 };

@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 // pages
 import Home from "./pages/home/Home"
+import Menu from "./global/components/Menu"
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator mode="modal" headerMode="none">
+        <Stack.Screen name="Menu" component={Menu} />
         <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
