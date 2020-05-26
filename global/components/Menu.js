@@ -5,19 +5,22 @@ import { Feather } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Home from "../../pages/home/Home";
+import BookHistory from "../../pages/books/components/BookHistory";
+
+import appColor from "../appColors"
 
 const Menu = () => {
   const Tab = createBottomTabNavigator();
 
   const getIconColor = (isActive) => {
-    return isActive ? "#4285f4" : "#F2F2F2";
+    return isActive ? appColor.lightColor : appColor.lightGrayColor;
   };
 
   const icons = {
     Home(isActive) {
       return <Feather name="book" color={getIconColor(isActive)} size={20} />;
     },
-    History(isActive) {
+    BookHistory(isActive) {
       return <Feather name="clock" color={getIconColor(isActive)} size={20} />;
     },
     Bookmarks(isActive) {
@@ -42,14 +45,14 @@ const Menu = () => {
         showLabel: false,
         style: {
           elevation: 0,
-          backgroundColor: "#282828",
-          borderTopColor: "#F2F2F2",
+          backgroundColor: "#454545",
+          borderTopColor: "transparent",
         },
       }}
       initialRouteName="Home"
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="History" component={Home} />
+      <Tab.Screen name="BookHistory" component={BookHistory} />
       <Tab.Screen name="Bookmarks" component={Home} />
       <Tab.Screen name="Profile" component={Home} />
     </Tab.Navigator>

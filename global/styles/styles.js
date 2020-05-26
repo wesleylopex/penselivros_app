@@ -1,43 +1,40 @@
 import styled from "styled-components/native";
 
-const primaryColor = "#4285f4"; // azul
-const darkColor = "#282828";
-const lightColor = "#F2F2F2";
-const grayColor = "#A9A9A9";
+const appColors = require("../appColors")
 
 // TEXTS
 export const TitleText = styled.Text`
   font-size: 18px;
-  color: ${lightColor};
+  color: ${appColors.lightColor};
 `;
 export const TitleTextBold = styled.Text`
   font-size: 18px;
-  color: ${lightColor};
+  color: ${appColors.lightColor};
   font-weight: bold;
 `;
 export const MediumText = styled.Text`
   font-size: 14px;
-  color: ${lightColor};
+  color: ${appColors.lightColor};
 `;
 export const MediumTextBold = styled.Text`
   font-size: 14px;
-  color: ${lightColor};
+  color: ${appColors.lightColor};
   font-weight: bold;
 `;
 
 export const SmallGrayText = styled.Text`
   font-size: 12px;
-  color: ${grayColor};
+  color: ${appColors.grayColor};
 `;
 
 export const SmallBlackText = styled.Text`
   font-size: 12px;
-  color: ${darkColor};
+  color: ${appColors.darkColor};
 `;
 
 // BUTTONS
 export const MainButton = styled.TouchableOpacity`
-  background-color: ${primaryColor};
+  background-color: ${appColors.primaryColor};
   padding: 18px 24px;
   border-radius: 10px;
   align-items: center;

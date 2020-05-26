@@ -1,5 +1,7 @@
 import styled from "styled-components/native";
 
+const appColors = require("../../../global/appColors")
+
 export const BooksContainer = styled.ScrollView.attrs({
   horizontal: true,
   contentContainerStyle: { paddingLeft: 16, paddingRight: 32 },
@@ -17,4 +19,15 @@ export const BookImage = styled.Image`
 export const BookModalImage = styled.Image`
   width: 102px;
   height: 148px;
+`;
+export const EmptyHistoryContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: ${appColors.darkColor};
+`;
+export const EmptyHistoryImage = styled.Image`
+  width: 284px;
+  height: 260px;
+  resizeMode: contain
 `;

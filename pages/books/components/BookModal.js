@@ -13,6 +13,8 @@ import {
   TitleText,
 } from "../../../global/styles/styles";
 
+const appColor = require("../../../global/appColors")
+
 const BookModal = ({ isVisible, hideModal }) => {
   const [isBookmarkChecked, setIsBookmarkChecked] = useState(false);
 
@@ -43,7 +45,7 @@ const BookModal = ({ isVisible, hideModal }) => {
           >
             <Feather
               name="bookmark"
-              color={isBookmarkChecked ? "#4285F4" : "#F2F2F2"}
+              color={isBookmarkChecked ? appColor.primaryColor : appColor.lightColor}
               size={22}
             />
           </TouchableOpacity>
@@ -60,9 +62,9 @@ const BookModal = ({ isVisible, hideModal }) => {
         <MainButton>
           <MediumText>Reservar este livro</MediumText>
         </MainButton>
-        {/* <SecondaryButton onPress={() => hideModal()}>
+        <SecondaryButton onPress={() => hideModal()} style={{marginTop: 16}}>
           <MediumText>Voltar</MediumText>
-        </SecondaryButton> */}
+        </SecondaryButton>
       </ModalContent>
     </BottomModal>
   );
@@ -70,7 +72,7 @@ const BookModal = ({ isVisible, hideModal }) => {
 
 const styles = StyleSheet.create({
   modalContent: {
-    backgroundColor: "#282828",
+    backgroundColor: appColor.darkColor,
     paddingVertical: 32,
     paddingHorizontal: 32,
   },

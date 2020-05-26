@@ -3,10 +3,10 @@ import { View, StatusBar, TouchableOpacity } from "react-native";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import { Feather } from "@expo/vector-icons";
 
-import { Container, SearchContainer, SearchInput } from "./styles";
+import { Container, SearchContainer, SearchInput } from "./styles/styles";
+import appColors from "../../global/appColors"
 
 import Header from "./components/Header";
-import BannersList from "./components/BannersList";
 import BooksContainer from "../books/BooksContainer";
 
 const Home = () => {
@@ -17,11 +17,9 @@ const Home = () => {
       <Header />
 
       <SearchContainer>
-        <Feather name="search" size={16} color="#A9A9A9" />
+        <Feather name="search" size={16} color={appColors.grayColor} />
         <SearchInput placeholder="Pesquisar livros" />
       </SearchContainer>
-
-      {/* <BannersList /> */}
 
       <BooksContainer categoryTitle="Política" />
       <BooksContainer categoryTitle="História" />

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image } from "react-native";
 
-import { HeaderDetails, HeaderContainer, ProfileImage } from "../styles";
+import { HeaderDetails, HeaderContainer, ProfileImage } from "../styles/styles";
 import { TitleText } from "../../../global/styles/styles";
 import profileImage from "../../../assets/me.jpg";
 
@@ -10,7 +10,7 @@ const Header = () => {
     <HeaderDetails>
       <HeaderContainer>
         <ProfileImage source={profileImage} />
-        <TitleText>Olá, Wesley Lopes</TitleText>
+        <TitleText>Boa tarde, Wesley Lopes</TitleText>
       </HeaderContainer>
     </HeaderDetails>
   );
