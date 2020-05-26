@@ -6,7 +6,7 @@ import { Feather } from "@expo/vector-icons";
 import { Container, SearchContainer, SearchInput } from "./styles/styles";
 import appColors from "../../global/appColors"
 
-import Header from "./components/Header";
+import GreetingContainer from "./components/GreetingContainer";
 import BooksContainer from "../books/BooksContainer";
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
     <Container>
       <StatusBar barStyle="light-content" />
 
-      <Header />
+      <GreetingContainer />
 
       <SearchContainer>
         <Feather name="search" size={16} color={appColors.grayColor} />

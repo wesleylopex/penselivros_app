@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 const appColors = require("../appColors")
 
-// TEXTS
+// title text
 export const TitleText = styled.Text`
   font-size: 18px;
   color: ${appColors.lightColor};
@@ -12,6 +12,7 @@ export const TitleTextBold = styled.Text`
   color: ${appColors.lightColor};
   font-weight: bold;
 `;
+// medium text
 export const MediumText = styled.Text`
   font-size: 14px;
   color: ${appColors.lightColor};
@@ -21,12 +22,25 @@ export const MediumTextBold = styled.Text`
   color: ${appColors.lightColor};
   font-weight: bold;
 `;
-
+export const MediumGrayText = styled.Text`
+  font-size: 14px;
+  color: ${appColors.grayColor};
+`;
+export const MediumGrayTextBold = styled.Text`
+  font-size: 14px;
+  color: ${appColors.grayColor};
+  font-weight: bold;
+`;
+// small text
 export const SmallGrayText = styled.Text`
   font-size: 12px;
   color: ${appColors.grayColor};
 `;
-
+export const SmallGrayTextBold = styled.Text`
+  font-size: 12px;
+  color: ${appColors.grayColor};
+  font-weight: bold;
+`;
 export const SmallBlackText = styled.Text`
   font-size: 12px;
   color: ${appColors.darkColor};

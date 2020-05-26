@@ -9,9 +9,9 @@ import {
   TertiaryButton,
   SecondaryButton,
 } from "../../../global/styles/styles";
-import emptyHistoryImage from "../../../assets/illustrations/empty-bro.png";
+import emptyHistoryImage from "../../../assets/illustrations/empty-amico.png";
 
-const BookHistory = () => {
+const Bookmarks = () => {
   const userHasHistory = false;
 
   return userHasHistory ? (
@@ -19,15 +19,15 @@ const BookHistory = () => {
   ) : (
     <EmptyHistoryContainer>
       <TitleText style={styles.emptyHistoryTitle}>
-        Suas reservas
+        Seus livros favoritos
       </TitleText>
       <View>
         <EmptyHistoryImage source={emptyHistoryImage} />
         <SecondaryButton style={{ marginTop: 16 }}>
-          <MediumText>Faça sua primeira reserva</MediumText>
+          <MediumText>Favorite seu primeiro livro</MediumText>
         </SecondaryButton>
         <SmallGrayText style={{ textAlign: "center", marginTop: 16 }}>
-          Você ainda não tem reservas
+          Você ainda não tem livros favoritos
         </SmallGrayText>
       </View>
     </EmptyHistoryContainer>
@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BookHistory;
+export default Bookmarks;

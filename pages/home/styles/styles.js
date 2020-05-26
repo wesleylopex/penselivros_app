@@ -13,12 +13,7 @@ export const Spacer = styled.View`
   padding-left: 32px;
 `;
 
-export const HeaderDetails = styled.View`
-  flex-wrap: wrap;
-  padding: 0px 32px;
-`;
-
-export const HeaderContainer = styled.View`
+export const GreetingContainerDetails = styled.View`
   flex-direction: row;
   align-items: center;
   margin-bottom: 32px;

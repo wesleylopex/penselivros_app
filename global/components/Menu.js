@@ -6,6 +6,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Home from "../../pages/home/Home";
 import BookHistory from "../../pages/books/components/BookHistory";
+import Bookmarks from "../../pages/books/components/Bookmarks";
+import Profile from "../../pages/user/components/Profile";
 
 import appColor from "../appColors"
 
@@ -18,7 +20,7 @@ const Menu = () => {
 
   const icons = {
     Home(isActive) {
-      return <Feather name="book" color={getIconColor(isActive)} size={20} />;
+      return <Feather name="compass" color={getIconColor(isActive)} size={20} />;
     },
     BookHistory(isActive) {
       return <Feather name="clock" color={getIconColor(isActive)} size={20} />;
@@ -53,8 +55,8 @@ const Menu = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="BookHistory" component={BookHistory} />
-      <Tab.Screen name="Bookmarks" component={Home} />
-      <Tab.Screen name="Profile" component={Home} />
+      <Tab.Screen name="Bookmarks" component={Bookmarks} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 };
