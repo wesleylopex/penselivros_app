@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 
-import { EmptyHistoryContainer, EmptyHistoryImage } from "../styles/styles";
+import { EmptyHistoryContainer, EmptyImage } from "../styles/styles";
 import {
   MediumText,
   TitleText,
@@ -9,9 +9,9 @@ import {
   TertiaryButton,
   SecondaryButton,
 } from "../../../global/styles/styles";
-import emptyHistoryImage from "../../../assets/illustrations/empty-amico.png";
+import emptyBookmarks from "../../../assets/illustrations/empty-amico.png";
 
-const Bookmarks = () => {
+const Bookmarks = ({ navigation }) => {
   const userHasHistory = false;
 
   return userHasHistory ? (
@@ -22,8 +22,8 @@ const Bookmarks = () => {
         Seus livros favoritos
       </TitleText>
       <View>
-        <EmptyHistoryImage source={emptyHistoryImage} />
-        <SecondaryButton style={{ marginTop: 16 }}>
+        <EmptyImage source={emptyBookmarks} />
+        <SecondaryButton onPress={() => navigation.navigate("Home")} style={{ marginTop: 16 }}>
           <MediumText>Favorite seu primeiro livro</MediumText>
         </SecondaryButton>
         <SmallGrayText style={{ textAlign: "center", marginTop: 16 }}>

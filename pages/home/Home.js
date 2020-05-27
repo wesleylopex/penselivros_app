@@ -4,7 +4,7 @@ import { getStatusBarHeight } from "react-native-status-bar-height";
 import { Feather } from "@expo/vector-icons";
 
 import { Container, SearchContainer, SearchInput } from "./styles/styles";
-import appColors from "../../global/appColors"
+import appColors from "../../global/appColors";
 
 import GreetingContainer from "./components/GreetingContainer";
 import BooksContainer from "../books/BooksContainer";
@@ -23,6 +23,7 @@ const Home = () => {
 
       <BooksContainer categoryTitle="Política" />
       <BooksContainer categoryTitle="História" />
+      <BooksContainer categoryTitle="Sociologia" />
     </Container>
   );
 };

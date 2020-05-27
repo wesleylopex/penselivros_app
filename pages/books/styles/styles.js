@@ -4,17 +4,19 @@ const appColors = require("../../../global/appColors")
 
 export const BooksContainer = styled.ScrollView.attrs({
   horizontal: true,
-  contentContainerStyle: { paddingLeft: 16, paddingRight: 32 },
+  contentContainerStyle: { paddingLeft: 14, paddingRight: 32 },
   showsHorizontalScrollIndicator: false,
-})``;
-export const BookCardStyle = styled.TouchableOpacity`
-  width: 84px;
+})`
   margin-bottom: 32px;
-  margin-left: 16px;
+`;
+export const BookCardStyle = styled.TouchableOpacity`
+  width: 96px;
+  margin-left: 18px;
 `;
 export const BookImage = styled.Image`
   width: 100%;
-  height: 122px;
+  height: 128px;
+  resizeMode: contain;
 `;
 export const BookModalImage = styled.Image`
   width: 102px;
@@ -27,8 +29,8 @@ export const EmptyHistoryContainer = styled.View`
   padding: 32px;
   background-color: ${appColors.darkColor};
 `;
-export const EmptyHistoryImage = styled.Image`
+export const EmptyImage = styled.Image`
   width: 284px;
   height: 260px;
-  resizeMode: contain
+  resizeMode: contain;
 `;

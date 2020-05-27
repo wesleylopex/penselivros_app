@@ -1,49 +1,58 @@
 import styled from "styled-components/native";
 
-const appColors = require("../appColors")
+const appColors = require("../appColors");
 
 // title text
 export const TitleText = styled.Text`
   font-size: 18px;
   color: ${appColors.lightColor};
+  font-family: nunitosans-regular;
 `;
 export const TitleTextBold = styled.Text`
   font-size: 18px;
   color: ${appColors.lightColor};
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-family: nunitosans-bold;
 `;
 // medium text
 export const MediumText = styled.Text`
   font-size: 14px;
   color: ${appColors.lightColor};
+  font-family: nunitosans-regular;
 `;
 export const MediumTextBold = styled.Text`
   font-size: 14px;
   color: ${appColors.lightColor};
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-family: nunitosans-bold;
 `;
 export const MediumGrayText = styled.Text`
   font-size: 14px;
   color: ${appColors.grayColor};
+  font-family: nunitosans-regular;
 `;
 export const MediumGrayTextBold = styled.Text`
   font-size: 14px;
   color: ${appColors.grayColor};
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-family: nunitosans-bold;
 `;
 // small text
 export const SmallGrayText = styled.Text`
   font-size: 12px;
   color: ${appColors.grayColor};
+  font-family: nunitosans-regular;
 `;
 export const SmallGrayTextBold = styled.Text`
   font-size: 12px;
   color: ${appColors.grayColor};
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-family: nunitosans-bold;
 `;
 export const SmallBlackText = styled.Text`
   font-size: 12px;
   color: ${appColors.darkColor};
+  font-family: nunitosans-regular;
 `;
 
 // BUTTONS

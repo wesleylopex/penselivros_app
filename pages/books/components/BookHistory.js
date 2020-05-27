@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 
-import { EmptyHistoryContainer, EmptyHistoryImage } from "../styles/styles";
+import { EmptyHistoryContainer, EmptyImage } from "../styles/styles";
 import {
   MediumText,
   TitleText,
@@ -11,19 +11,20 @@ import {
 } from "../../../global/styles/styles";
 import emptyHistoryImage from "../../../assets/illustrations/empty-bro.png";
 
-const BookHistory = () => {
+const BookHistory = ({ navigation }) => {
   const userHasHistory = false;
 
   return userHasHistory ? (
     <View />
   ) : (
     <EmptyHistoryContainer>
-      <TitleText style={styles.emptyHistoryTitle}>
-        Suas reservas
-      </TitleText>
+      <TitleText style={styles.emptyHistoryTitle}>Suas reservas</TitleText>
       <View>
-        <EmptyHistoryImage source={emptyHistoryImage} />
-        <SecondaryButton style={{ marginTop: 16 }}>
+        <EmptyImage source={emptyHistoryImage} />
+        <SecondaryButton
+          onPress={() => navigation.navigate("Home")}
+          style={{ marginTop: 16 }}
+        >
           <MediumText>Faça sua primeira reserva</MediumText>
         </SecondaryButton>
         <SmallGrayText style={{ textAlign: "center", marginTop: 16 }}>
